@@ -1,0 +1,155 @@
+@prefix : <http://communications.data.gov.au/def/ont/storagesystems#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://communications.data.gov.au/def/ont/storagesystems> .
+
+<http://communications.data.gov.au/def/ont/storagesystems> rdf:type owl:Ontology ;
+                                                            owl:versionIRI <http://communications.data.gov.au/def/ont/storagesystems/0.1> ;
+                                                            <http://purl.org/dc/elements/1.1/contributor> "Research Data Alliance Working Group on Storage Service Definitions"@en ;
+                                                            <http://purl.org/dc/terms/created> "2017-09-20"@en ;
+                                                            rdfs:comment """This small ontology is designed to describe digital data storage systems in a vendor-neutral way so that choises about their appropriateness for particular tasks can be gauged.
+
+This ontology fits within the broader context of other ontologies designed to describe records management."""@en ;
+                                                            rdfs:label "Storage Systems ontology"@en ;
+                                                            <http://purl.org/dc/elements/1.1/creator> "Nicholas Car"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://communications.data.gov.au/def/ont/storagesystems#hasAttribute
+:hasAttribute rdf:type owl:ObjectProperty ;
+              rdfs:domain :StorageSystem ;
+              rdfs:range :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#regionsAllowed
+:regionsAllowed rdf:type owl:ObjectProperty ;
+                rdfs:domain :GeographicPlacement ;
+                rdfs:range :Region .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#regionsNotAllowed
+:regionsNotAllowed rdf:type owl:ObjectProperty ;
+                   rdfs:domain :GeographicPlacement ;
+                   rdfs:range :Region .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://communications.data.gov.au/def/ont/storagesystems#copies
+:copies rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Redundancy ;
+        rdfs:range owl:real .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#latencyTime
+:latencyTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Performance ;
+             rdfs:range owl:real .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#randomReadsIOPS
+:randomReadsIOPS rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Performance ;
+                 rdfs:range owl:real .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#randomWritesIOPS
+:randomWritesIOPS rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Performance ;
+                  rdfs:range owl:real .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#sequentialReadsIOPS
+:sequentialReadsIOPS rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Performance ;
+                     rdfs:range owl:real .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#sequentialWritesIOPS
+:sequentialWritesIOPS rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Performance ;
+                      rdfs:range owl:real .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#throughput
+:throughput rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Performance ;
+            rdfs:range owl:real .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Certification
+:Certification rdf:type owl:Class ;
+               rdfs:subClassOf :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#GeographicPlacement
+:GeographicPlacement rdf:type owl:Class ;
+                     rdfs:subClassOf :Placement .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#InternetConnectivityZonePlacement
+:InternetConnectivityZonePlacement rdf:type owl:Class ;
+                                   rdfs:subClassOf :Placement .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Media
+:Media rdf:type owl:Class ;
+       rdfs:subClassOf :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Performance
+:Performance rdf:type owl:Class ;
+             rdfs:subClassOf :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Placement
+:Placement rdf:type owl:Class ;
+           rdfs:subClassOf :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#PowerNetworkPlacement
+:PowerNetworkPlacement rdf:type owl:Class ;
+                       rdfs:subClassOf :Placement .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Redundancy
+:Redundancy rdf:type owl:Class ;
+            rdfs:subClassOf :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Region
+:Region rdf:type owl:Class .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#Retention
+:Retention rdf:type owl:Class ;
+           rdfs:subClassOf :StorageSystemAttribute .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#StorageSystem
+:StorageSystem rdf:type owl:Class ;
+               rdfs:subClassOf <http://reference.data.gov.au/def/ont/agrif#InformationSystem> ;
+               rdfs:comment "A digital data storage system"@en ;
+               rdfs:label "Storage System"@en .
+
+
+###  http://communications.data.gov.au/def/ont/storagesystems#StorageSystemAttribute
+:StorageSystemAttribute rdf:type owl:Class .
+
+
+###  http://reference.data.gov.au/def/ont/agrif#InformationSystem
+<http://reference.data.gov.au/def/ont/agrif#InformationSystem> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
