@@ -21,5 +21,5 @@ Brisbane, Queensland, Australia
 <nicholas.car@csiro.au>  
 
 Contributors:
-**Paul Millar** & **Mikale Borg**  
+**Paul Millar** & **Mikael Borg**  
 *Co-chairs, RDA Storage Service Definitions WG*  
