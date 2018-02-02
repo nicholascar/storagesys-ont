@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Storage Systems ontology</title>
+        <link href="http://promsns.org/static/LODE/owl.css" rel="stylesheet" type="text/css" />
+        <link href="http://promsns.org/static/LODE/Primer.css" rel="stylesheet" type="text/css" />
+        <link href="http://promsns.org/static/LODE/rec.css" rel="stylesheet" type="text/css" />
+        <link href="http://promsns.org/static/LODE/extra.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="http://promsns.org/static/LODE/favicon.ico" />
+        <script src="http://promsns.org/static/LODE/jquery.js"></script>
+        <script src="http://promsns.org/static/LODE/jquery.scrollTo.js"></script>
+        <script src="http://promsns.org/static/LODE/marked.min.js"></script>
+        <script>
+            $(document).ready(
+                function () {
+                	jQuery(".markdown").each(function(el){
+            jQuery(this).after(marked(jQuery(this).text())).remove()});
+                    var list = $('a[id="http://www.essepuntato.it/tmp/1517548581-ontology"]');
+                    if (list.size() != 0) {
+                    	var element = list.first();
+                    	$.scrollTo(element);
+                    }
+                });
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <h1>Storage Systems ontology</h1>
+            <dl>
+                <dt>IRI:</dt>
+                <dd>http://purl.org/storagesys</dd>
+                <dt>Version IRI:</dt>
+                <dd>http://purl.org/storagesys/0.1</dd>
+            </dl>
+            <dl>
+                <dt>Authors:</dt>
+                <dd>Nicholas Car</dd>
+                <dd><a href="http://orcid.org/0000-0002-8742-7730">http://orcid.org/0000-0002-8742-7730</a></dd>
+                <dt>Contributors:</dt>
+                <dd>Mikael Borg</dd>
+                <dd>Paul Millar</dd>
+                <dd>Research Data Alliance Working Group on Storage Service Definitions</dd>
+            </dl>
+            <dl>
+                <dt>Ontology source:</dt>
+                <dd><a href="storagesys.ttl">in turtle</a></dd>
+                <dd><a href="storagesys.xml">in RDF/XML</a></dd>
+            </dl>
+            <dl>
+      				<dt>Further documentation &amp; examples:</dt>
+      				<dd><a href="http://github.com/nicholascar/storagesys-ont">This ontology's full documentation on GitHub</a></dd>
+      			</dl>
+        </div>
+        <hr />
+        <h2>Abstract</h2>
+        <span class="markdown">This ontology is designed to describe digital artefact storage systems in a vendor-neutral way so that choices about their systems' appropriateness for particular tasks can be gauged.
+        This ontology fits within the broader context of other ontologies designed to describe records management and digital datasets.</span>
+        <div id="toc">
+            <h2>Table of Content</h2>
+            <ol>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#objectproperties">Object Properties</a></li>
+                <li><a href="#dataproperties">Data Properties</a></li>
+                <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+            </ol>
+        </div>
+        <div id="classes">
+            <h2>Classes</h2>
+            <ul class="hlist">
+                <li><a href="#Certification" title="http://purl.org/storagesys#Certification"><span>certification</span></a></li>
+                <li><a href="#DigitalArtefact" title="http://purl.org/storagesys#DigitalArtefact">Digital Artefact</a></li>
+                <li><a href="#Feature" title="http://www.opengis.net/ont/geosparql#Feature"><span>feature</span></a></li>
+                <li><a href="#GeographicPlacement" title="http://purl.org/storagesys#GeographicPlacement"><span>geographic placement</span></a></li>
+                <li><a href="#InformationSystem" title="http://reference.data.gov.au/def/ont/agrif#InformationSystem">Information System</a></li>
+                <li><a href="#InternetConnectivityZonePlacement" title="http://purl.org/storagesys#InternetConnectivityZonePlacement"><span>internet connectivity zone placement</span></a></li>
+                <li><a href="#LocalRedundancy" title="http://purl.org/storagesys#LocalRedundancy">Local Redundancy</a></li>
+                <li><a href="#Media" title="http://purl.org/storagesys#Media"><span>media</span></a></li>
+                <li><a href="#Performance" title="http://purl.org/storagesys#Performance"><span>performance</span></a></li>
+                <li><a href="#Placement" title="http://purl.org/storagesys#Placement"><span>placement</span></a></li>
+                <li><a href="#PowerNetworkPlacement" title="http://purl.org/storagesys#PowerNetworkPlacement"><span>power network placement</span></a></li>
+                <li><a href="#Redundancy" title="http://purl.org/storagesys#Redundancy">Redundancy</a></li>
+                <li><a href="#Retention" title="http://purl.org/storagesys#Retention"><span>retention</span></a></li>
+                <li><a href="#StorageRegion" title="http://purl.org/storagesys#StorageRegion">Storage Region</a></li>
+                <li><a href="#StorageSystem" title="http://purl.org/storagesys#StorageSystem">Storage System</a></li>
+                <li><a href="#StorageZone" title="http://purl.org/storagesys#StorageZone">Storage Zone</a></li>
+                <li><a href="#ZonalRedundancy" title="http://purl.org/storagesys#ZonalRedundancy">Zonal Redundancy</a></li>
+            </ul>
+            <div id="Certification" class="entity">
+                <a id="http://purl.org/storagesys#Certification"></a>
+                <h3>certification<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#Certification</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="DigitalArtefact" class="entity">
+                <a id="http://purl.org/storagesys#DigitalArtefact"></a>
+                <h3>Digital Artefact<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#DigitalArtefact</p>
+                <div class="comment"><span class="markdown">Digital Artefacts are the digital objects stored by Storage Systems. They may be a dataset, datablase, file; single or multiple.
+                    Digital Artefacts are  determined by its management within a Storage System(s), not by its datasize, value, or type.</span>
+                </div>
+            </div>
+            <div id="Feature" class="entity">
+                <a id="http://www.opengis.net/ont/geosparql#Feature"></a>
+                <h3>feature<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#Feature</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has sub-classes</dt>
+                    <dd><a href="#StorageRegion" title="http://purl.org/storagesys#StorageRegion">Storage Region</a><sup title="class" class="type-c">c</sup>, <a href="#StorageZone" title="http://purl.org/storagesys#StorageZone">Storage Zone</a><sup title="class" class="type-c">c</sup>, <a href="#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="GeographicPlacement" class="entity">
+                <a id="http://purl.org/storagesys#GeographicPlacement"></a>
+                <h3>geographic placement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#GeographicPlacement</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Placement" title="http://purl.org/storagesys#Placement">placement</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#regionsAllowed" title="http://purl.org/storagesys#regionsAllowed">regions allowed</a><sup title="object property" class="type-op">op</sup>, <a href="#regionsNotAllowed" title="http://purl.org/storagesys#regionsNotAllowed">regions not allowed</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
+            </div>
+            <div id="InformationSystem" class="entity">
+                <a id="http://reference.data.gov.au/def/ont/agrif#InformationSystem"></a>
+                <h3>Information System<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/agrif#InformationSystem</p>
+                <div class="comment"><span class="markdown">An Information System is defined by the Australian Government Records Interoperability Framework (AGRIF: http://reference.data.gov.au/def/ont/agrif) as "an organized system for the collection, organization, storage and communication of information, typically Digital Artefacts or Records." We take "Digital Artefacts or Records" to be all forms of digital data that users associate with being able to be stored within local or remote storage.</span></div>
+                <dl class="description">
+                    <dt>has sub-classes</dt>
+                    <dd><a href="#StorageSystem" title="http://purl.org/storagesys#StorageSystem">Storage System</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="InternetConnectivityZonePlacement" class="entity">
+                <a id="http://purl.org/storagesys#InternetConnectivityZonePlacement"></a>
+                <h3>internet connectivity zone placement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#InternetConnectivityZonePlacement</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Placement" title="http://purl.org/storagesys#Placement">placement</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="/LocalRedundancy" class="entity">
+                <a id="http://purl.org/storagesys#LocalRedundancy"></a>
+                <h3>Local Redundancy<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#LocalRedundancy</p>
+                <div class="comment"><span class="markdown">Local Redundancy is redundancy due to multiple copies of a digital artefact being stored within a single Storage Zone.</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Redundancy" title="http://purl.org/storagesys#Redundancy">Redundancy</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="Media" class="entity">
+                <a id="http://purl.org/storagesys#Media"></a>
+                <h3>media<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#Media</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="Performance" class="entity">
+                <a id="http://purl.org/storagesys#Performance"></a>
+                <h3>performance<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#Performance</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#latencyTime" title="http://purl.org/storagesys#latencyTime">latency time</a><sup title="data property" class="type-dp">dp</sup>, <a href="#randomReadsIOPS" title="http://purl.org/storagesys#randomReadsIOPS">random reads i o p s</a><sup title="data property" class="type-dp">dp</sup>, <a href="#randomWritesIOPS" title="http://purl.org/storagesys#randomWritesIOPS">random writes i o p s</a><sup title="data property" class="type-dp">dp</sup>, <a href="#sequentialReadsIOPS" title="http://purl.org/storagesys#sequentialReadsIOPS">sequential reads i o p s</a><sup title="data property" class="type-dp">dp</sup>, <a href="#sequentialWritesIOPS" title="http://purl.org/storagesys#sequentialWritesIOPS">sequential writes i o p s</a><sup title="data property" class="type-dp">dp</sup>, <a href="#throughput" title="http://purl.org/storagesys#throughput">throughput</a><sup title="data property" class="type-dp">dp</sup></dd>
+                </dl>
+            </div>
+            <div id="Placement" class="entity">
+                <a id="http://purl.org/storagesys#Placement"></a>
+                <h3>placement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#Placement</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has sub-classes</dt>
+                    <dd><a href="#GeographicPlacement" title="http://purl.org/storagesys#GeographicPlacement">geographic placement</a><sup title="class" class="type-c">c</sup>, <a href="#InternetConnectivityZonePlacement" title="http://purl.org/storagesys#InternetConnectivityZonePlacement">internet connectivity zone placement</a><sup title="class" class="type-c">c</sup>, <a href="#PowerNetworkPlacement" title="http://purl.org/storagesys#PowerNetworkPlacement">power network placement</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="PowerNetworkPlacement" class="entity">
+                <a id="http://purl.org/storagesys#PowerNetworkPlacement"></a>
+                <h3>power network placement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#PowerNetworkPlacement</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Placement" title="http://purl.org/storagesys#Placement">placement</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="Redundancy" class="entity">
+                <a id="http://purl.org/storagesys#Redundancy"></a>
+                <h3>Redundancy<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#Redundancy</p>
+                <div class="comment"><span class="markdown">Redundancy is a metric able to be calculated by the number, placement and availability of copies of a stored digital artefact.</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                    <dt>has sub-classes</dt>
+                    <dd><a href="#LocalRedundancy" title="http://purl.org/storagesys#LocalRedundancy">Local Redundancy</a><sup title="class" class="type-c">c</sup>, <a href="#ZonalRedundancy" title="http://purl.org/storagesys#ZonalRedundancy">Zonal Redundancy</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#copies" title="http://purl.org/storagesys#copies">copies</a><sup title="data property" class="type-dp">dp</sup></dd>
+                </dl>
+            </div>
+            <div id="Retention" class="entity">
+                <a id="http://purl.org/storagesys#Retention"></a>
+                <h3>retention<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#Retention</p>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="StorageRegion" class="entity">
+                <a id="http://purl.org/storagesys#StorageRegion"></a>
+                <h3>Storage Region<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#StorageRegion</p>
+                <div class="comment"><span class="markdown">A Storage Region is a geographical or political region which comtains one or more Storage Zones. Zones are isolated from each other in some way (power grids, network infrastructure etc.) to cater for outages. Regions then allow for convenient aggregations of Zones.
+                    A Region might be 'North America' and Zones within it might be 'California A', 'California B', 'Mid West', 'Mexico', 'Canada A, B &amp; C'.</span>
+                </div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://dbpedia.org/ontology/Location">location</span><sup title="class" class="type-c">c</sup></dd>
+                    <dd><a href="#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a><sup title="class" class="type-c">c</sup></dd>
+                    <dd><a href="#hasZone" title="http://purl.org/storagesys#hasZone">/has zone</a><sup title="object property" class="type-op">op</sup> <span class="logic">min</span> 1 <a href="#StorageZone" title="http://purl.org/storagesys#StorageZone">Storage Zone</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#hasZone" title="http://purl.org/storagesys#hasZone">/has zone</a><sup title="object property" class="type-op">op</sup></dd>
+                    <dt>is in range of</dt>
+                    <dd><a href="#hasRegion" title="http://purl.org/storagesys#hasRegion">/has region</a><sup title="object property" class="type-op">op</sup>, <a href="#regionsAllowed" title="http://purl.org/storagesys#regionsAllowed">regions allowed</a><sup title="object property" class="type-op">op</sup>, <a href="#regionsNotAllowed" title="http://purl.org/storagesys#regionsNotAllowed">regions not allowed</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
+            </div>
+            <div id="StorageSystem" class="entity">
+                <a id="http://purl.org/storagesys#StorageSystem"></a>
+                <h3>Storage System<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#StorageSystem</p>
+                <div class="comment"><span class="markdown">A digital data storage system</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#InformationSystem" title="http://reference.data.gov.au/def/ont/agrif#InformationSystem">Information System</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#hasAttribute" title="http://purl.org/storagesys#hasAttribute">has attribute</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
+            </div>
+            <div id="/StorageZone" class="entity">
+                <a id="http://purl.org/storagesys#StorageZone"></a>
+                <h3>Storage Zone<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#StorageZone</p>
+                <div class="comment"><span class="markdown">Storage Zones are areas/facilities providing storage that are isolated from each other in some way (power grids, network infrastructure etc.) to cater for outages. Storgae Regions are aggregations of Zones defined for management convenience.</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://dbpedia.org/ontology/Location">location</span><sup title="class" class="type-c">c</sup></dd>
+                    <dd><a href="#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#hasRegion" title="http://purl.org/storagesys#hasRegion">/has region</a><sup title="object property" class="type-op">op</sup></dd>
+                    <dt>is in range of</dt>
+                    <dd><a href="#hasZone" title="http://purl.org/storagesys#hasZone">/has zone</a><sup title="object property" class="type-op">op</sup>, <a href="#isInZone" title="http://purl.org/storagesys#isInZone">/is in zone</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
+            </div>
+            <div id="/ZonalRedundancy" class="entity">
+                <a id="http://purl.org/storagesys#ZonalRedundancy"></a>
+                <h3>Zonal Redundancy<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#ZonalRedundancy</p>
+                <div class="comment"><span class="markdown">Zonal Redundancy is redundancy due to multiple copies of a digital artefact being stored in different Storage Zones.</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Redundancy" title="http://purl.org/storagesys#Redundancy">Redundancy</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+        <div id="objectproperties">
+            <h2>Object Properties</h2>
+            <ul class="hlist">
+                <li><a href="#hasRegion" title="http://purl.org/storagesys#hasRegion"><span>/has region</span></a></li>
+                <li><a href="#hasZone" title="http://purl.org/storagesys#hasZone"><span>/has zone</span></a></li>
+                <li><a href="#isInZone" title="http://purl.org/storagesys#isInZone"><span>/is in zone</span></a></li>
+                <li><a href="#hasAttribute" title="http://purl.org/storagesys#hasAttribute"><span>has attribute</span></a></li>
+                <li><a href="#regionsAllowed" title="http://purl.org/storagesys#regionsAllowed"><span>regions allowed</span></a></li>
+                <li><a href="#regionsNotAllowed" title="http://purl.org/storagesys#regionsNotAllowed"><span>regions not allowed</span></a></li>
+            </ul>
+            <div id="/hasRegion" class="entity">
+                <a id="http://purl.org/storagesys#hasRegion"></a>
+                <h3>/has region<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#hasRegion</p>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span></dd>
+                        <dt>has domain</dt>
+                        <dd><a href="#StorageZone" title="http://purl.org/storagesys#StorageZone">Storage Zone</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#StorageRegion" title="http://purl.org/storagesys#StorageRegion">Storage Region</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>is inverse of</dt>
+                        <dd><a href="#hasZone" title="http://purl.org/storagesys#hasZone">/has zone</a><sup title="object property" class="type-op">op</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="/hasZone" class="entity">
+                <a id="http://purl.org/storagesys#hasZone"></a>
+                <h3>/has zone<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#hasZone</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#StorageRegion" title="http://purl.org/storagesys#StorageRegion">Storage Region</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#StorageZone" title="http://purl.org/storagesys#StorageZone">Storage Zone</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>is inverse of</dt>
+                        <dd><a href="#hasRegion" title="http://purl.org/storagesys#hasRegion">/has region</a><sup title="object property" class="type-op">op</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="/isInZone" class="entity">
+                <a id="http://purl.org/storagesys#isInZone"></a>
+                <h3>/is in zone<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#isInZone</p>
+                <div class="description">
+                    <dl>
+                        <dt>has range</dt>
+                        <dd><a href="#StorageZone" title="http://purl.org/storagesys#StorageZone">Storage Zone</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="hasAttribute" class="entity">
+                <a id="http://purl.org/storagesys#hasAttribute"></a>
+                <h3>has attribute<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#hasAttribute</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#StorageSystem" title="http://purl.org/storagesys#StorageSystem">Storage System</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://purl.org/storagesys#StorageSystemAttribute">storage system attribute</span><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="regionsAllowed" class="entity">
+                <a id="http://purl.org/storagesys#regionsAllowed"></a>
+                <h3>regions allowed<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#regionsAllowed</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#GeographicPlacement" title="http://purl.org/storagesys#GeographicPlacement">geographic placement</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#StorageRegion" title="http://purl.org/storagesys#StorageRegion">Storage Region</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="regionsNotAllowed" class="entity">
+                <a id="http://purl.org/storagesys#regionsNotAllowed"></a>
+                <h3>regions not allowed<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#regionsNotAllowed</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#GeographicPlacement" title="http://purl.org/storagesys#GeographicPlacement">geographic placement</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#StorageRegion" title="http://purl.org/storagesys#StorageRegion">Storage Region</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div id="dataproperties">
+            <h2>Data Properties</h2>
+            <ul class="hlist">
+                <li><a href="#copies" title="http://purl.org/storagesys#copies"><span>copies</span></a></li>
+                <li><a href="#latencyTime" title="http://purl.org/storagesys#latencyTime"><span>latency time</span></a></li>
+                <li><a href="#randomReadsIOPS" title="http://purl.org/storagesys#randomReadsIOPS"><span>random reads i o p s</span></a></li>
+                <li><a href="#randomWritesIOPS" title="http://purl.org/storagesys#randomWritesIOPS"><span>random writes i o p s</span></a></li>
+                <li><a href="#sequentialReadsIOPS" title="http://purl.org/storagesys#sequentialReadsIOPS"><span>sequential reads i o p s</span></a></li>
+                <li><a href="#sequentialWritesIOPS" title="http://purl.org/storagesys#sequentialWritesIOPS"><span>sequential writes i o p s</span></a></li>
+                <li><a href="#throughput" title="http://purl.org/storagesys#throughput"><span>throughput</span></a></li>
+            </ul>
+            <div id="copies" class="entity">
+                <a id="http://purl.org/storagesys#copies"></a>
+                <h3>copies<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#copies</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Redundancy" title="http://purl.org/storagesys#Redundancy">Redundancy</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="latencyTime" class="entity">
+                <a id="http://purl.org/storagesys#latencyTime"></a>
+                <h3>latency time<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#latencyTime</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Performance" title="http://purl.org/storagesys#Performance">performance</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="randomReadsIOPS" class="entity">
+                <a id="http://purl.org/storagesys#randomReadsIOPS"></a>
+                <h3>random reads i o p s<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#randomReadsIOPS</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Performance" title="http://purl.org/storagesys#Performance">performance</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="randomWritesIOPS" class="entity">
+                <a id="http://purl.org/storagesys#randomWritesIOPS"></a>
+                <h3>random writes i o p s<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#randomWritesIOPS</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Performance" title="http://purl.org/storagesys#Performance">performance</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="sequentialReadsIOPS" class="entity">
+                <a id="http://purl.org/storagesys#sequentialReadsIOPS"></a>
+                <h3>sequential reads i o p s<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#sequentialReadsIOPS</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Performance" title="http://purl.org/storagesys#Performance">performance</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="sequentialWritesIOPS" class="entity">
+                <a id="http://purl.org/storagesys#sequentialWritesIOPS"></a>
+                <h3>sequential writes i o p s<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#sequentialWritesIOPS</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Performance" title="http://purl.org/storagesys#Performance">performance</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="throughput" class="entity">
+                <a id="http://purl.org/storagesys#throughput"></a>
+                <h3>throughput<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/storagesys#throughput</p>
+                <div class="description">
+                    <dl>
+                        <dt>has domain</dt>
+                        <dd><a href="#Performance" title="http://purl.org/storagesys#Performance">performance</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/2002/07/owl#real">real</span></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div id="namespacedeclarations">
+            <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+            <dl>
+                <dt><em>default namespace</em></dt>
+                <dd>http://purl.org/storagesys#</dd>
+                <dt>agrif</dt>
+                <dd>http://reference.data.gov.au/def/ont/agrif#</dd>
+                <dt>dc</dt>
+                <dd>http://purl.org/dc/elements/1.1/</dd>
+                <dt>geosparql</dt>
+                <dd>http://www.opengis.net/ont/geosparql#</dd>
+                <dt>dbp</dt>
+                <dd>http://dbpedia.org/ontology/</dd>
+                <dt>owl</dt>
+                <dd>http://www.w3.org/2002/07/owl#</dd>
+                <dt>rdf</dt>
+                <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+                <dt>rdfs</dt>
+                <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+                <dt>dct</dt>
+                <dd>http://purl.org/dc/terms/</dd>
+                <dt>xsd</dt>
+                <dd>http://www.w3.org/2001/XMLSchema#</dd>
+            </dl>
+        </div>
+        <p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
+    </body>
+</html>
