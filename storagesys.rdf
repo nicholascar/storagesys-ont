@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://communications.data.gov.au/def/ont/storagesystems#"
+     xml:base="http://communications.data.gov.au/def/ont/storagesystems"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.org/storagesys">
+        <owl:versionIRI rdf:resource="http://purl.org/storagesys/0.1"/>
+        <dc:contributor xml:lang="en">Research Data Alliance Working Group on Storage Service Definitions</dc:contributor>
+        <dc:contributor xml:lang="en">Mikael Borg</dc:contributor>
+        <terms:created xml:lang="en">2017-09-20</terms:created>
+        <terms:creator rdf:resource="http://orcid.org/0000-0002-8742-7730"/>
+        <rdfs:label xml:lang="en">Storage Systems ontology</rdfs:label>
+        <dc:creator xml:lang="en">Nicholas Car</dc:creator>
+        <rdfs:comment xml:lang="en">This ontology is designed to describe digital artefact storage systems in a vendor-neutral way so that choices about their systems&apos; appropriateness for particular tasks can be gauged.
+
+This ontology fits within the broader context of other ontologies designed to describe records management and digital datasets.</rdfs:comment>
+        <dc:contributor xml:lang="en">Paul Millar</dc:contributor>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/storagesys#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/storagesys#hasAttribute">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#StorageSystem"/>
+        <rdfs:range rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#regionsAllowed -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/storagesys#regionsAllowed">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#GeographicPlacement"/>
+        <rdfs:range rdf:resource="http://purl.org/storagesys#StorageRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#regionsNotAllowed -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/storagesys#regionsNotAllowed">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#GeographicPlacement"/>
+        <rdfs:range rdf:resource="http://purl.org/storagesys#StorageRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#/hasRegion -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/storagesys#/hasRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://purl.org/storagesys#/hasZone"/>
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#/StorageZone"/>
+        <rdfs:range rdf:resource="http://purl.org/storagesys#StorageRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#/hasZone -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/storagesys#/hasZone">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#StorageRegion"/>
+        <rdfs:range rdf:resource="http://purl.org/storagesys#/StorageZone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#/isInZone -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/storagesys#/isInZone">
+        <rdfs:range rdf:resource="http://purl.org/storagesys#/StorageZone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/storagesys#copies -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#copies">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Redundancy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#latencyTime -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#latencyTime">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#randomReadsIOPS -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#randomReadsIOPS">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#randomWritesIOPS -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#randomWritesIOPS">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#sequentialReadsIOPS -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#sequentialReadsIOPS">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#sequentialWritesIOPS -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#sequentialWritesIOPS">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/storagesys#throughput -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/storagesys#throughput">
+        <rdfs:domain rdf:resource="http://purl.org/storagesys#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Location -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Location"/>
+    
+
+
+    <!-- http://purl.org/storagesys#Certification -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#Certification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#DigitalArtefact -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#DigitalArtefact">
+        <rdfs:comment xml:lang="en">Digital Artefacts are the digital objects stored by Storage Systems. They may be a dataset, datablase, file; single or multiple.
+
+Digital Artefacts are  determined by its management within a Storage System(s), not by its datasize, value, or type.</rdfs:comment>
+        <rdfs:label xml:lang="en">Digital Artefact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#GeographicPlacement -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#GeographicPlacement">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#Placement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#InternetConnectivityZonePlacement -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#InternetConnectivityZonePlacement">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#Placement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#Media -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#Media">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#Performance -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#Performance">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#Placement -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#Placement">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#PowerNetworkPlacement -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#PowerNetworkPlacement">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#Placement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#Redundancy -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#Redundancy">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+        <rdfs:comment xml:lang="en">Redundancy is a metric able to be calculated by the number, placement and availability of copies of a stored digital artefact.</rdfs:comment>
+        <rdfs:label xml:lang="en">Redundancy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#Retention -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#Retention">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#StorageSystemAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#StorageRegion -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#StorageRegion">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Location"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/storagesys#/hasZone"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/storagesys#/StorageZone"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A Storage Region is a geographical or political region which comtains one or more Storage Zones. Zones are isolated from each other in some way (power grids, network infrastructure etc.) to cater for outages. Regions then allow for convenient aggregations of Zones.
+
+A Region might be &apos;North America&apos; and Zones within it might be &apos;California A&apos;, &apos;California B&apos;, &apos;Mid West&apos;, &apos;Mexico&apos;, &apos;Canada A, B &amp; C&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Storage Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#StorageSystem -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#StorageSystem">
+        <rdfs:subClassOf rdf:resource="http://reference.data.gov.au/def/ont/agrif#InformationSystem"/>
+        <rdfs:comment xml:lang="en">A digital data storage system</rdfs:comment>
+        <rdfs:label xml:lang="en">Storage System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#StorageSystemAttribute -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#StorageSystemAttribute"/>
+    
+
+
+    <!-- http://purl.org/storagesys#/LocalRedundancy -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#/LocalRedundancy">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#Redundancy"/>
+        <rdfs:comment xml:lang="en">Local Redundancy is redundancy due to multiple copies of a digital artefact being stored within a single Storage Zone.</rdfs:comment>
+        <rdfs:label xml:lang="en">Local Redundancy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#/StorageZone -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#/StorageZone">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Location"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:comment xml:lang="en">Storage Zones are areas/facilities providing storage that are isolated from each other in some way (power grids, network infrastructure etc.) to cater for outages. Storgae Regions are aggregations of Zones defined for management convenience.</rdfs:comment>
+        <rdfs:label xml:lang="en">Storage Zone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/storagesys#/ZonalRedundancy -->
+
+    <owl:Class rdf:about="http://purl.org/storagesys#/ZonalRedundancy">
+        <rdfs:subClassOf rdf:resource="http://purl.org/storagesys#Redundancy"/>
+        <rdfs:comment xml:lang="en">Zonal Redundancy is redundancy due to multiple copies of a digital artefact being stored in different Storage Zones.</rdfs:comment>
+        <rdfs:label xml:lang="en">Zonal Redundancy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://reference.data.gov.au/def/ont/agrif#InformationSystem -->
+
+    <owl:Class rdf:about="http://reference.data.gov.au/def/ont/agrif#InformationSystem">
+        <rdfs:comment xml:lang="en">An Information System is defined by the Australian Government Records Interoperability Framework (AGRIF: http://reference.data.gov.au/def/ont/agrif) as &quot;an organized system for the collection, organization, storage and communication of information, typically Digital Artefacts or Records.&quot; We take &quot;Digital Artefacts or Records&quot; to be all forms of digital data that users associate with being able to be stored within local or remote storage.</rdfs:comment>
+        <rdfs:label xml:lang="en">Information System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
