@@ -15,11 +15,11 @@ This ontology is developed by members of the [Research Data Alliance](https://ww
 
 Author & Contact Person:  
 **Nicholas Car**  
-*Co-chair, RDA Provenance Patterns WG*  
+*Co-chair, RDA Storage Service Definitions WG*  
 CSIRO Land & Water  
 Brisbane, Queensland, Australia  
 <nicholas.car@csiro.au>  
 
 Contributors:
-**Paul Millar** & **Mikale Borg**  
+**Paul Millar** & **Mikael Borg**  
 *Co-chairs, RDA Storage Service Definitions WG*  
